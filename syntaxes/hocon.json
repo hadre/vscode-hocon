@@ -38,6 +38,9 @@
         },
         {
             "include": "#ustring"
+        },
+        {
+            "include": "#sql-string"
         }
     ],
     "repository": {
@@ -125,11 +128,38 @@
             "begin": "\\$\\{",
             "end": "\\}",
             "patterns": [
-              {
-                "include": "#string"
-              }
+                {
+                    "include": "#string"
+                }
             ],
             "name": "storage.type.source.hocon"
+        },
+        "sql-string": {
+            "patterns": [
+                {
+                    "name": "meta.embedded.block.sql",
+                    "begin": "\\b(\\w*sql\\w*)\\s*=\\s*(\"\"\"|\")",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "variable.other.hocon"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.string.begin.hocon"
+                        }
+                    },
+                    "end": "\\2",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.hocon"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "source.sql"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

@@ -1,6 +1,6 @@
 {
-    "name": "HOCON",
-    "displayName": "HOCON",
+    "name": "blanca-hocon",
+    "displayName": "Blanca HOCON",
     "description": "HOCON config language support.",
     "version": "0.0.1",
     "engines": {
@@ -14,17 +14,17 @@
         "typesafe",
         "config"
     ],
-    "publisher": "sabieber",
+    "publisher": "howardli",
     "author": {
-        "name": "Sascha Bieberstein"
+        "name": "Howard Li"
     },
     "repository": {
-		"type": "git",
-		"url": "https://github.com/sabieber/vscode-hocon"
-	},
+        "type": "git",
+        "url": "https://github.com/sabieber/vscode-hocon"
+    },
     "bugs": {
-		"url": "https://github.com/sabieber/vscode-hocon/issues"
-	},
+        "url": "https://github.com/sabieber/vscode-hocon/issues"
+    },
     "categories": [
         "Languages"
     ],
@@ -48,7 +48,10 @@
             {
                 "language": "hocon",
                 "scopeName": "source.hocon",
-                "path": "./syntaxes/hocon.json"
+                "path": "./syntaxes/hocon.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.sql": "source.sql"
+                }
             }
         ]
     }
